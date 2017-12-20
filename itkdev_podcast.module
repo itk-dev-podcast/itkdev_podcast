@@ -30,8 +30,48 @@ function itkdev_podcast_menu() {
 /**
  * View for Podcast.
  */
-function itkdev_podcast_view($action = NULL) {
+function itkdev_podcast_view($path = NULL) {
   return [
-    '#markup' => '<pre>' . json_encode([__METHOD__, $action], JSON_PRETTY_PRINT) . '</pre>',
+    '#markup' => '<div id="itk-dev-podcast"></div>',
+    '#attached' => [
+      'css' => [
+        drupal_get_path('module', 'itkdev_podcast') . '/apps/main/css/app.css',
+      ],
+      'js' => [
+        drupal_get_path('module', 'itkdev_podcast') . '/apps/main/js/app.js',
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function itkdev_podcast_block_info() {
+  $blocks['itkdev_podcast_frontpage'] = [
+    'info' => t('Podcasts (frontpage)'),
+    'cache' => DRUPAL_NO_CACHE,
+  ];
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function itkdev_podcast_block_view($delta = '') {
+  return [
+    'subject' => NULL,
+    'content' => [
+      '#markup' => '<div id="itk-dev-podcast"></div>',
+      '#attached' => [
+        'css' => [
+          drupal_get_path('module', 'itkdev_podcast') . '/apps/block/css/app.css',
+        ],
+        'js' => [
+          drupal_get_path('module', 'itkdev_podcast') . '/apps/block/js/app.js',
+        ],
+      ],
+    ],
   ];
 }

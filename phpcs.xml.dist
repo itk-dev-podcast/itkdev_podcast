@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<ruleset name="PHP_CodeSniffer">
+ <description>The Drupal coding standard.</description>
+
+ <file>.</file>
+
+ <arg value="p"/>
+
+ <rule ref="Drupal"/>
+</ruleset>

@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * The Podcast module.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function itkdev_podcast_menu() {
+  return [
+    'itkdev/podcast' => [
+      'page callback' => 'itkdev_podcast_view',
+      'access callback' => TRUE,
+    ],
+    'itkdev/podcast/%' => [
+      'page callback' => 'itkdev_podcast_view',
+      'page arguments' => [2],
+      'access callback' => TRUE,
+    ],
+  ];
+}
+
+/**
+ * View for Podcast.
+ */
+function itkdev_podcast_view($action = NULL) {
+  return [
+    '#markup' => '<pre>' . json_encode([__METHOD__, $action], JSON_PRETTY_PRINT) . '</pre>',
+  ];
+}

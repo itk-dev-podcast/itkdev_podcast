@@ -1,0 +1,4 @@
+name = Podcast
+description = Podcast
+core = 7.x
+package = Podcast

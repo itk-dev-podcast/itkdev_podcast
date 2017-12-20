@@ -13,7 +13,8 @@ function itkdev_podcast_menu() {
     // Add "Bibcast" item to main menu.
     'itkdev/podcast' => [
       'menu_name' => 'main-menu',
-      'title' => 'Bibcast',
+      'title' => 'Podcast',
+      'weight' => 1000,
       'page callback' => 'itkdev_podcast_view',
       'access callback' => TRUE,
       'type' => MENU_NORMAL_ITEM,
